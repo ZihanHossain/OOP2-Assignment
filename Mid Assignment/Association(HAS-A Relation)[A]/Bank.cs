@@ -26,7 +26,7 @@ namespace Association_HAS_A_Relation__A_
             get { return this.accounts; }
         }
 
-        public void PrintAllAccounts()
+        public void PrintAccountDetails()
         {
             for(int i=0;i<accounts.Length;i++)
             {
@@ -34,7 +34,7 @@ namespace Association_HAS_A_Relation__A_
                 {
                     continue;
                 }
-                accounts[i].PrintAccount();
+                accounts[i].ShowAccountInformation();
             }
         }
 
@@ -51,29 +51,21 @@ namespace Association_HAS_A_Relation__A_
             }
         }
 
-        public void SearchAccount(int accountNo)
+        public dynamic SearchAccount(int accountNo)
         {
-            int flag = 0;
+            dynamic flag = null;
             for (int i = 0; i < accounts.Length; i++)
             {
-                if (accounts[i] == null)
+                if(accounts[i] == null)
                 {
                     continue;
                 }
-                else if (accounts[i].AccountNumber == accountNo)
+                if (accounts[i].AccountNumber == accountNo)
                 {
-                    accounts[i].PrintAccount();
-                    flag = 0;
-                    break;
-                }
-                else
-                {
-                    flag = 1;
-                    
+                    return accounts[i];
                 }
             }
-            if(flag==1)
-                Console.WriteLine("Account Not Found");
+            return flag;    
         }
 
         public void DeleteAccout(int accountNo)
@@ -107,9 +99,42 @@ namespace Association_HAS_A_Relation__A_
                 Console.WriteLine("account not found");
         }
 
-        public void Transaction(int type, int accountNumber, )
+        public void Transaction(int type, int accountNumber, int accountNumber1, int amount)
         {
-            
+            if(type == 1)
+            {
+               if (SearchAccount(accountNumber) != null)
+                {
+                    SearchAccount(accountNumber).Withdraw(amount);
+                }
+               else
+                {
+                    Console.WriteLine("Account Not Found");
+                }
+            }
+            else if(type == 2)
+            {
+                if (SearchAccount(accountNumber) != null)
+                {
+                    SearchAccount(accountNumber).Deposit(amount);
+                }
+                else
+                {
+                    Console.WriteLine("Account Not Found");
+                }
+            }
+            else if(type == 3)
+            {
+                if (SearchAccount(accountNumber) != null & SearchAccount(accountNumber1) != null)
+                {
+                    dynamic recever = SearchAccount(accountNumber1);
+                    SearchAccount(accountNumber).Transfer(recever,amount);
+                }
+                else
+                {
+                    Console.WriteLine("Account Not Found");
+                }
+            }
         }
     }
 }

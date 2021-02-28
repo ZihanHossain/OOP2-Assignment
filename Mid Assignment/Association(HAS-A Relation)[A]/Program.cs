@@ -23,8 +23,9 @@ namespace Association_HAS_A_Relation__A_
             ourBank.AddAccount(new Account("Tamim", 3000, new Address(7, 20, "Chittagong" , "Bangladesh")));
             //ourBank.PrintAllAccounts();
             //ourBank.SearchAccount(300);
-            ourBank.DeleteAccout(3003);
-            ourBank.PrintAllAccounts();
+            //ourBank.PrintAllAccounts();
+            ourBank.Transaction(3,1,2,500);
+            
         }
     }
 }

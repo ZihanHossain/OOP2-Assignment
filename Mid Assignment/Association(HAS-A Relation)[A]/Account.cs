@@ -42,7 +42,7 @@ namespace Association_HAS_A_Relation__A_
             set { this.address = value; }
         }
 
-        public void PrintAccount()
+        public void ShowAccountInformation()
         {
             //Console.WriteLine("Account No:"+this.accountNumber+"\nAccount Name:"+this.accountName+"\nBalance:"+this.balance);
             Console.WriteLine("Account No:{0}\nAccount Name:{1}\nBalance:{2}",this.accountNumber,this.accountName,this.balance);
@@ -59,6 +59,7 @@ namespace Association_HAS_A_Relation__A_
             {
                 this.balance = this.balance - amount;
                 Console.WriteLine("Withdrwa Successful");
+                Console.WriteLine("Account No:{0}\nAccount Name:{1}\nBalance:{2}", this.accountNumber, this.accountName, this.balance);
             }
         }
 
@@ -66,6 +67,13 @@ namespace Association_HAS_A_Relation__A_
         {
             this.balance = this.balance + amount;
             Console.WriteLine("Deposit Successful");
+            Console.WriteLine("Account No:{0}\nAccount Name:{1}\nBalance:{2}", this.accountNumber, this.accountName, this.balance);
+        }
+
+        public void Transfer( Account account,double amount)
+        {
+            Withdraw(amount);
+            account.Deposit(amount);
         }
     }
 }

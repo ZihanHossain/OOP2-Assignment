@@ -12,3 +12,10 @@ C:\Users\Zihan\Desktop\OOP 2\Day7\Association(HAS-A Relation)[A]\Association(HAS
 C:\Users\Zihan\Desktop\OOP 2\Day7\Association(HAS-A Relation)[A]\Association(HAS-A Relation)[A]\bin\Debug\Association(HAS-A Relation)[A].exe.config
 C:\Users\Zihan\Desktop\OOP 2\Day7\Association(HAS-A Relation)[A]\Association(HAS-A Relation)[A]\bin\Debug\Association(HAS-A Relation)[A].exe
 C:\Users\Zihan\Desktop\OOP 2\Day7\Association(HAS-A Relation)[A]\Association(HAS-A Relation)[A]\bin\Debug\Association(HAS-A Relation)[A].pdb
+C:\Users\Zihan\Desktop\OOP 2\Day7\Mid Assignment\Association(HAS-A Relation)[A]\obj\Debug\Association(HAS-A Relation)[A].csprojAssemblyReference.cache
+C:\Users\Zihan\Desktop\OOP 2\Day7\Mid Assignment\Association(HAS-A Relation)[A]\obj\Debug\Association(HAS-A Relation)[A].csproj.CoreCompileInputs.cache
+C:\Users\Zihan\Desktop\OOP 2\Day7\Mid Assignment\Association(HAS-A Relation)[A]\obj\Debug\Association(HAS-A Relation)[A].exe
+C:\Users\Zihan\Desktop\OOP 2\Day7\Mid Assignment\Association(HAS-A Relation)[A]\obj\Debug\Association(HAS-A Relation)[A].pdb
+C:\Users\Zihan\Desktop\OOP 2\Day7\Mid Assignment\Association(HAS-A Relation)[A]\bin\Debug\Association(HAS-A Relation)[A].exe.config
+C:\Users\Zihan\Desktop\OOP 2\Day7\Mid Assignment\Association(HAS-A Relation)[A]\bin\Debug\Association(HAS-A Relation)[A].exe
+C:\Users\Zihan\Desktop\OOP 2\Day7\Mid Assignment\Association(HAS-A Relation)[A]\bin\Debug\Association(HAS-A Relation)[A].pdb
