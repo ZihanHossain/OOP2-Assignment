@@ -62,10 +62,10 @@ namespace Association_HAS_A_Relation__A_
         public void ShowAccountInformation()
         {
             //Console.WriteLine("Account No:"+this.accountNumber+"\nAccount Name:"+this.accountName+"\nBalance:"+this.balance);
-            Console.WriteLine();
+            Console.WriteLine("---------------------------------------------");
             Console.WriteLine("Account No:{0}\nAccount Name:{1}\nDate of Birth:{2}\nBalance:{3}\nWithdrawn:{4} times\nDeposited:{5} times\nTransferd:{6} times", this.accountNumber,this.accountName,this.dateOfBirth,this.balance,this.withdraw,this.deposit,this.transfer);
-            Console.WriteLine();
             this.address.PrintAddress();
+            Console.WriteLine("---------------------------------------------");
         }
 
         public void Withdraw(double amount)
@@ -74,16 +74,18 @@ namespace Association_HAS_A_Relation__A_
             {
                 Console.WriteLine("Insufficient Balance");
             }
-            else if((this.balance - balance) == 0 & this.accountType == "saving")
+            else if((this.balance - amount) == 0 && this.accountType == "saving")
             {
                 Console.WriteLine("Remaining balance cannot be zero in a saving account.");
             }
-            else
+            else if(amount < this.balance)
             {
                 this.balance = this.balance - amount;
                 this.withdraw++;
                 Console.WriteLine("Withdrwa Successful");
+                Console.WriteLine("---------------------------------------------");
                 Console.WriteLine("Account No:{0}\nAccount Name:{1}\nBalance:{2}", this.accountNumber, this.accountName, this.balance);
+                Console.WriteLine("---------------------------------------------");
             }
         }
 
@@ -92,7 +94,9 @@ namespace Association_HAS_A_Relation__A_
             this.balance = this.balance + amount;
             this.deposit++;
             Console.WriteLine("Deposit Successful");
+            Console.WriteLine("---------------------------------------------");
             Console.WriteLine("Account No:{0}\nAccount Name:{1}\nBalance:{2}", this.accountNumber, this.accountName, this.balance);
+            Console.WriteLine("---------------------------------------------");
         }
 
         public void Transfer( Account account,double amount)
