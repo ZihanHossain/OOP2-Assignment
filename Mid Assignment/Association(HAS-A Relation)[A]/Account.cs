@@ -12,12 +12,15 @@ namespace Association_HAS_A_Relation__A_
         private string accountName;
         private double balance;
         private Address address;//1-1 Relation
+        private string dateOfBirth;
+        private string accountType;
 
-        public Account(string accountName,double balance,Address address)
+        public Account(string accountName,string accountType ,double balance,Address address)
         {
             this.accountName = accountName;
             this.balance = balance;
             this.address = address;
+            this.accountType = accountType;
         }
         public int AccountNumber
         {
@@ -36,6 +39,19 @@ namespace Association_HAS_A_Relation__A_
             set { this.balance = value; }
         }
 
+        public string DateOfBirth
+        {
+            get { return this.dateOfBirth; }
+            set { this.dateOfBirth = value; }
+        }
+
+        public string AccountType
+        {
+            get { return this.accountType; }
+            set { this.accountType = value; }
+        }
+
+
         public Address Address
         {
             get { return this.address; }
@@ -45,7 +61,9 @@ namespace Association_HAS_A_Relation__A_
         public void ShowAccountInformation()
         {
             //Console.WriteLine("Account No:"+this.accountNumber+"\nAccount Name:"+this.accountName+"\nBalance:"+this.balance);
+            Console.WriteLine();
             Console.WriteLine("Account No:{0}\nAccount Name:{1}\nBalance:{2}",this.accountNumber,this.accountName,this.balance);
+            Console.WriteLine();
             this.address.PrintAddress();
         }
 
@@ -54,6 +72,10 @@ namespace Association_HAS_A_Relation__A_
             if(amount > this.balance)
             {
                 Console.WriteLine("Insufficient Balance");
+            }
+            else if((this.balance - balance) == 0 & this.accountType == "saving")
+            {
+                Console.WriteLine("Remaining balance cannot be zero in a saving account.");
             }
             else
             {

@@ -46,6 +46,7 @@ namespace Association_HAS_A_Relation__A_
                 {
                     account.AccountNumber = i;
                     accounts[i] = account;
+                    accounts[i].ShowAccountInformation();
                     break;
                 }
             }
