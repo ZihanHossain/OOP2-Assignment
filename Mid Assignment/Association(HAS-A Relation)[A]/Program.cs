@@ -81,6 +81,7 @@ namespace Association_HAS_A_Relation__A_
                         ourBank.Transaction(3, accountNumber, accountNumber1, amount);
                         break;
                     case "show":
+                        ourBank.PrintAccountDetails(accountNumber);
                         break;
                     case "quit":
                         Environment.Exit(0);
@@ -107,6 +108,7 @@ namespace Association_HAS_A_Relation__A_
                         Account();
                         break;
                     case "quit":
+                        flag = "exit";
                         break;
                     default:
                         Console.WriteLine("Please enter a valide input");

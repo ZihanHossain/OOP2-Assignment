@@ -14,6 +14,7 @@ namespace Association_HAS_A_Relation__A_
         private Address address;//1-1 Relation
         private string dateOfBirth;
         private string accountType;
+        public int withdraw, deposit, transfer = 0;
 
         public Account(string accountName,string accountType ,double balance,Address address)
         {
@@ -62,7 +63,7 @@ namespace Association_HAS_A_Relation__A_
         {
             //Console.WriteLine("Account No:"+this.accountNumber+"\nAccount Name:"+this.accountName+"\nBalance:"+this.balance);
             Console.WriteLine();
-            Console.WriteLine("Account No:{0}\nAccount Name:{1}\nBalance:{2}",this.accountNumber,this.accountName,this.balance);
+            Console.WriteLine("Account No:{0}\nAccount Name:{1}\nDate of Birth:{2}\nBalance:{3}\nWithdrawn:{4} times\nDeposited:{5} times\nTransferd:{6} times", this.accountNumber,this.accountName,this.dateOfBirth,this.balance,this.withdraw,this.deposit,this.transfer);
             Console.WriteLine();
             this.address.PrintAddress();
         }
@@ -80,6 +81,7 @@ namespace Association_HAS_A_Relation__A_
             else
             {
                 this.balance = this.balance - amount;
+                this.withdraw++;
                 Console.WriteLine("Withdrwa Successful");
                 Console.WriteLine("Account No:{0}\nAccount Name:{1}\nBalance:{2}", this.accountNumber, this.accountName, this.balance);
             }
@@ -88,6 +90,7 @@ namespace Association_HAS_A_Relation__A_
         public void Deposit(double amount)
         {
             this.balance = this.balance + amount;
+            this.deposit++;
             Console.WriteLine("Deposit Successful");
             Console.WriteLine("Account No:{0}\nAccount Name:{1}\nBalance:{2}", this.accountNumber, this.accountName, this.balance);
         }
@@ -96,6 +99,7 @@ namespace Association_HAS_A_Relation__A_
         {
             Withdraw(amount);
             account.Deposit(amount);
+            this.transfer++;
         }
     }
 }

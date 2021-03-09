@@ -26,7 +26,7 @@ namespace Association_HAS_A_Relation__A_
             get { return this.accounts; }
         }
 
-        public void PrintAccountDetails()
+        public void PrintAccountsDetails()
         {
             for(int i=0;i<accounts.Length;i++)
             {
@@ -36,6 +36,11 @@ namespace Association_HAS_A_Relation__A_
                 }
                 accounts[i].ShowAccountInformation();
             }
+        }
+
+        public void PrintAccountDetails(int accountNo)
+        {
+            SearchAccount(accountNo).ShowAccountInformation();
         }
 
         public void AddAccount(Account account)
